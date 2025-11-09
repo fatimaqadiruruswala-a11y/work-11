@@ -1,0 +1,53 @@
+:root{
+  --accent: #2b87d3; /* cool blue */
+  --dark: #2d3a3f; /* heading color */
+  --muted: #9aa3a6;
+  --sidebar-bg: #1c5c8e;
+  --white: #ffffff;
+}*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--dark);}
+body{background:#f6f6f6}
+
+.wrap{display:flex;min-height:100vh}
+
+.sidebar{width:260px;background:var(--sidebar-bg);color:var(--white);padding:40px 20px;display:flex;flex-direction:column;align-items:center}
+.photo{width:140px;height:140px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.08);box-shadow:0 4px 0 rgba(0,0,0,0.05);margin-bottom:30px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+.site-nav ul{list-style:none;padding:0;margin:0;width:100%}
+.site-nav li{padding:12px 18px;text-transform:uppercase;letter-spacing:1px;font-weight:600;color:rgba(255,255,255,0.9);cursor:pointer}
+.site-nav li:hover{background:rgba(0,0,0,0.06)}
+.site-nav .active{background:rgba(0,0,0,0.08);border-radius:3px}
+
+.content{flex:1;padding:40px 80px}
+.hero{max-width:760px}
+.name{font-family: 'Merriweather', 'Georgia', serif;font-weight:700;font-size:64px;margin:0 0 12px;line-height:1}
+.name .first{color:var(--dark);font-weight:800;letter-spacing:2px}
+.name .last{color:var(--accent);margin-left:8px}
+
+.meta{margin:6px 0 22px;color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:1px}
+.summary{color:#6f7677;line-height:1.6;margin:18px 0 28px}
+
+.social{display:flex;gap:14px}
+.icon{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#444;color:#fff;text-decoration:none;font-weight:700}
+.icon:hover{transform:translateY(-3px)}
+
+/* Responsive */
+@media (max-width:800px){
+	.wrap{flex-direction:column}
+	.sidebar{width:100%;flex-direction:row;align-items:center;gap:20px;padding:18px}
+	.photo{margin:0}
+	.site-nav{display:none}
+	.content{padding:30px}
+	.name{font-size:44px}
+}
+
+@media (max-width:420px){
+	.name{font-size:32px}
+	.content{padding:18px}
+}
+
+/* Small visual polish */
+.content a{color:var(--accent);text-decoration:underline}
+.meta a{color:inherit}
+
